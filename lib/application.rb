@@ -1,0 +1,3 @@
+# Application
+
+puts 'Hello, world!'

@@ -6,7 +6,7 @@ RSpec::Core::RakeTask.new(:spec) do |t|
   t.fail_on_error = false
 end
 
-Rake::PackageTask.new('rubygraph', ENV['RELEASE_NO'] || '1.0.SNAPSHOT') do |p|
+Rake::PackageTask.new('conference-track-manangement', ENV['RELEASE_NO'] || '1.0.SNAPSHOT') do |p|
   p.need_tar = true
   p.package_files.include('lib/**/*')
 end

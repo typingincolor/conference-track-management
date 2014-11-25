@@ -4,6 +4,7 @@ class Session
   attr_reader :available_time
 
   def initialize(length)
+    fail 'session length must be an integer' unless length.is_a? Integer
     @talks = []
     @available_time = length
   end

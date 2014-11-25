@@ -2,6 +2,11 @@
 require 'spec_helper'
 
 describe 'session' do
+  it 'fails if the session length is not a integer' do
+    expect { Session.new 'xxx' }.to raise_error \
+    'session length must be an integer'
+  end
+
   it 'can add a talk to a session' do
     session = Session.new 100
     talk = Talk.new 'a talk 25min'

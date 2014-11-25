@@ -17,4 +17,8 @@ describe 'talk' do
     expect(talk.description).to eq('this is a talk')
     expect(talk.length). to eq(5)
   end
+
+  it 'throws an execption if the format is incorrect' do
+    expect{Talk.new('this is a failing talk')}.to raise_error 'incorrect format'
+  end
 end

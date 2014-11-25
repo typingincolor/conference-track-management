@@ -12,6 +12,8 @@ class Talk
       @length = 5
     elsif /(\d+)min/.match(words.last)
       @length = /(\d+)min/.match(words.last).captures[0].to_i
+    else
+      fail 'incorrect format'
     end
   end
 end

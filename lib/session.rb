@@ -1,5 +1,4 @@
 # Session
-
 class Session
   attr_reader :talks
 
@@ -7,11 +6,11 @@ class Session
     @talks = []
   end
 
-  def add talk
+  def add(talk)
     @talks << talk
   end
 
-  def include? talk
+  def include?(talk)
     @talks.include? talk
   end
 end

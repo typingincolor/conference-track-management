@@ -19,6 +19,7 @@ describe 'talk' do
   end
 
   it 'throws an execption if the format is incorrect' do
-    expect{Talk.new('this is a failing talk')}.to raise_error 'incorrect format'
+    expect { Talk.new('this is a failing talk') }
+      .to raise_error 'incorrect format'
   end
 end

@@ -13,7 +13,7 @@ class Talk
     if words.last == 'lightning'
       @length = LIGHTNING_TALK_LENGTH
     elsif /(\d+)min/.match(words.last)
-      @length = /(\d+)min/.match(words.last).captures[0].to_i
+      @length = words.last.gsub('min', '').to_i
     else
       fail 'incorrect format'
     end

@@ -9,4 +9,12 @@ describe 'talk' do
     expect(talk.description).to eq('this is a talk')
     expect(talk.length). to eq(45)
   end
+
+  it 'populates description and length correctly with length specified'\
+     ' as lightning' do
+    talk = Talk.new('this is a talk lightning')
+
+    expect(talk.description).to eq('this is a talk')
+    expect(talk.length). to eq(5)
+  end
 end

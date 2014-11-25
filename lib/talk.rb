@@ -18,4 +18,10 @@ class Talk
 
     @description = talk[/.*(?=\s)/]
   end
+
+  def ==(that)
+    return true if @length == that.length && @description == that.description
+
+    false
+  end
 end

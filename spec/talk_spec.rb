@@ -22,4 +22,25 @@ describe 'talk' do
     expect { Talk.new('this is a failing talk') }
       .to raise_error 'incorrect format'
   end
+
+  it 'it knows when two talks are the same' do
+    talk = Talk.new 'this is a talk 45min'
+    talk2 = Talk.new 'this is a talk 45min'
+
+    expect(talk).to eq talk2
+  end
+
+  it 'it knows when two talks are different because of length' do
+    talk = Talk.new 'this is a talk 45min'
+    talk2 = Talk.new 'this is a talk 30min'
+
+    expect(talk).to_not eq talk2
+  end
+
+  it 'it knows when two talks are different because of description' do
+    talk = Talk.new 'this is a talk 45min'
+    talk2 = Talk.new 'this is another talk 45min'
+
+    expect(talk).to_not eq talk2
+  end
 end

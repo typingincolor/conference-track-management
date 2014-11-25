@@ -1,5 +1,7 @@
 # README
 
+[![Code Climate](https://codeclimate.com/repos/5474ac586956804cde0c3199/badges/c860c6b3497060db60e7/gpa.svg)](https://codeclimate.com/repos/5474ac586956804cde0c3199/feed) [![Test Coverage](https://codeclimate.com/repos/5474ac586956804cde0c3199/badges/c860c6b3497060db60e7/coverage.svg)](https://codeclimate.com/repos/5474ac586956804cde0c3199/feed)
+
 ## Problem Two: Conference Track Management
 
 You are planning a big programming conference and have received many proposals

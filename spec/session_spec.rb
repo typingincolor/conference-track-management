@@ -13,7 +13,7 @@ describe 'session' do
 
     session.add talk
 
-    expect(session.talks).to include talk
+    expect(session).to include talk
   end
 
   it 'add? returns true if talk length < available time in session' do
@@ -50,7 +50,7 @@ describe 'session' do
     talk2 = Talk.new 'a too long talk 15min'
 
     session.add talk1
-    expect(session.talks).to include talk1
+    expect(session).to include talk1
 
     expect { session.add talk2 }.to raise_error 'talk is too long for session'
   end
@@ -63,8 +63,8 @@ describe 'session' do
     session.add talk1
     session.add talk2
 
-    expect(session.talks).to include talk1
-    expect(session.talks).to include talk2
+    expect(session).to include talk1
+    expect(session).to include talk2
     expect(session.available_time).to eq 0
   end
 
@@ -76,8 +76,8 @@ describe 'session' do
     session.add talk1
     session.add talk2
 
-    expect(session.talks).to include talk1
-    expect(session.talks).to include talk2
+    expect(session).to include talk1
+    expect(session).to include talk2
     expect(session.available_time).to eq 5
   end
 end

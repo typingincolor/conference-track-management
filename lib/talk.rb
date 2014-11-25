@@ -8,8 +8,6 @@ class Talk
   def initialize(talk)
     words = talk.split
 
-    @description = talk[/.*(?=\s)/]
-
     if words.last == 'lightning'
       @length = LIGHTNING_TALK_LENGTH
     elsif /(\d+)min/.match(words.last)
@@ -17,5 +15,7 @@ class Talk
     else
       fail 'incorrect format'
     end
+
+    @description = talk[/.*(?=\s)/]
   end
 end

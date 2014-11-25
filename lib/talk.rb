@@ -4,14 +4,14 @@ class Talk
   attr_reader :length
 
   def initialize(talk)
-    matches = /(\d+)min/.match(talk)
-
-    if matches.nil?
-      @length = 5 if talk.split.last == 'lightning'
-    else
-      @length = matches.captures[0].to_i
-    end
+    words = talk.split
 
     @description = talk[/.*(?=\s)/]
+
+    if words.last == 'lightning'
+      @length = 5
+    elsif /(\d+)min/.match(words.last)
+      @length = /(\d+)min/.match(words.last).captures[0].to_i
+    end
   end
 end

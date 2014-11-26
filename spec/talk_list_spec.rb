@@ -16,7 +16,7 @@ describe 'talk' do
     list << Talk.new('a talk 45min')
     list << Talk.new('a talk 60min')
 
-    list.sort_desc!
+    list.sort!
 
     expect(list[0]).to eq Talk.new('a talk 60min')
     expect(list[1]).to eq Talk.new('a talk 45min')

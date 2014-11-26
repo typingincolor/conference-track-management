@@ -24,4 +24,8 @@ class Talk
 
     false
   end
+
+  def <=>(other)
+    other.length <=> @length
+  end
 end

@@ -9,9 +9,9 @@ describe 'planner' do
     talk2 = Talk.new 'talk two 20min'
     list << talk1 << talk2
 
-    planner = Planner.new list, [30]
+    planner = Planner.new
 
-    result = planner.plan
+    result = planner.plan list, [30]
 
     expect(result[0].talks.length).to eq 2
     expect(result[0].talks[0]).to eq talk1
@@ -26,16 +26,9 @@ describe 'planner' do
     talk3 = Talk.new 'talk three 20min'
     list << talk1 << talk2 << talk3
 
-    planner = Planner.new list, [30, 30]
+    planner = Planner.new
 
-    result = planner.plan
-
-    result.each do |x|
-      puts "#{x}"
-      x.talks.each do |y|
-        puts y.description
-      end
-    end
+    result = planner.plan list, [30, 30]
 
     expect(result.length).to eq 2
     expect(result[0].talks.length).to eq 2

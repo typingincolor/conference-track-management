@@ -39,4 +39,8 @@ describe 'talk' do
     expect(list[3].length).to eq 10
     expect(list[4].length).to eq 15
   end
+
+  it 'handles non-existant file' do
+    expect { TalkList.new 'rubbishfile' }.to raise_error Errno::ENOENT
+  end
 end

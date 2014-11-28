@@ -8,3 +8,4 @@ end
 require_relative '../lib/talk'
 require_relative '../lib/session'
 require_relative '../lib/talk_list'
+require_relative '../lib/planner'

@@ -8,4 +8,4 @@ gem 'rubocop-checkstyle_formatter', require: false
 gem 'rspec_junit_formatter'
 gem 'rake'
 
-gem 'simplecov', :require => false, :group => :test
+gem 'simplecov', require: false, group: :test

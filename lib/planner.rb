@@ -9,8 +9,15 @@ class Planner
   end
 
   def plan
-    @talks.each do |talk|
-      @sessions[0].add talk
+    processed = Array.new @talks.length, false
+    @sessions.each do |session|
+      @talks.each_with_index do |talk, index|
+        next if processed[index]
+        if session.add? talk
+          session.add talk
+          processed[index] = true
+        end
+      end
     end
 
     @sessions

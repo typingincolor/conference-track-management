@@ -16,19 +16,19 @@ class Planner
   end
 
   def iterate_over_sessions(sessions, talks)
-    processed = Array.new talks.length, false
+    talks_processed = Array.new talks.length, false
     sessions.each do |session|
-      iterate_over_talks session, talks, processed
+      iterate_over_talks session, talks, talks_processed
     end
     sessions
   end
 
-  def iterate_over_talks(session, talks, processed)
+  def iterate_over_talks(session, talks, talks_processed)
     talks.each_with_index do |talk, index|
-      next if processed[index]
+      next if talks_processed[index]
       if session.add? talk
         session.add talk
-        processed[index] = true
+        talks_processed[index] = true
       end
     end
   end

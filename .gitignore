@@ -2,3 +2,4 @@ test_result.xml
 checkstyle.xml
 pkg
 coverage
+.idea

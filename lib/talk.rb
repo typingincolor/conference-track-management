@@ -16,7 +16,7 @@ class Talk
       fail 'incorrect format'
     end
 
-    @description = talk[/.*(?=\s)/]
+    @description = talk
   end
 
   def ==(other)

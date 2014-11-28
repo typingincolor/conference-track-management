@@ -2,8 +2,7 @@
 class Planner
   def plan(talks, session_lengths)
     sessions = setup_sessions(session_lengths)
-    processed = Array.new talks.length, false
-    iterate_over_sessions(sessions, talks, processed)
+    iterate_over_sessions(sessions, talks)
   end
 
   def setup_sessions(session_lengths)
@@ -16,18 +15,23 @@ class Planner
     sessions
   end
 
-  def iterate_over_sessions(sessions, talks, processed)
+  def iterate_over_sessions(sessions, talks)
+    processed = Array.new talks.length, false
     sessions.each do |session|
-      talks.each_with_index do |talk, index|
-        next if processed[index]
-        if session.add? talk
-          session.add talk
-          processed[index] = true
-        end
-      end
+      iterate_over_talks session, talks, processed
     end
     sessions
   end
 
-  private :setup_sessions, :iterate_over_sessions
+  def iterate_over_talks(session, talks, processed)
+    talks.each_with_index do |talk, index|
+      next if processed[index]
+      if session.add? talk
+        session.add talk
+        processed[index] = true
+      end
+    end
+  end
+
+  private :setup_sessions, :iterate_over_sessions, :iterate_over_talks
 end

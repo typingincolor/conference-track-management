@@ -3,7 +3,7 @@ SimpleCov.start do
   add_filter do |src|
     !(src.filename =~ /^#{SimpleCov.root}\/lib/)
   end
-end
+end if ENV['COVERAGE']
 
 require_relative '../lib/talk'
 require_relative '../lib/session'

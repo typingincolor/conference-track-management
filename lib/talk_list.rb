@@ -1,5 +1,3 @@
-require 'talk'
-
 # Talk List
 class TalkList < Array
   def initialize(filename = '')

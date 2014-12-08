@@ -1,6 +1,6 @@
 # README
 
-[![Code Climate](https://codeclimate.com/repos/5474ac586956804cde0c3199/badges/c860c6b3497060db60e7/gpa.svg)](https://codeclimate.com/repos/5474ac586956804cde0c3199/feed) [![Test Coverage](https://codeclimate.com/repos/5474ac586956804cde0c3199/badges/c860c6b3497060db60e7/coverage.svg)](https://codeclimate.com/repos/5474ac586956804cde0c3199/feed)
+[![Code Climate](https://codeclimate.com/github/typingincolor/conference-track-management/badges/gpa.svg)](https://codeclimate.com/github/typingincolor/conference-track-management)
 
 ## Problem Two: Conference Track Management
 
